@@ -1,0 +1,9 @@
+virtualenv env
+source env/Scripts/activate
+pip install django
+pip install djangorestframework
+pip install coverage
+pip freeze > requirements.txt
+django-admin startproject core .
+python manage.py startapp bmi
+python manage.py test bmi.tests.view.BMITests
